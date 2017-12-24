@@ -1,7 +1,7 @@
 # Class ssh::hostkeys
 class ssh::hostkeys(
   Boolean $export_ipaddresses = true,
-  String $storeconfigs_group = undef,
+  Optional[String] $storeconfigs_group = undef,
   Array $extra_aliases = [],
 ) {
   validate_array($extra_aliases)

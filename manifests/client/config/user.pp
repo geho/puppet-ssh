@@ -4,8 +4,8 @@
 #
 define ssh::client::config::user(
   Enum['present','absent'] $ensure = 'present',
-  String $target                   = undef,
-  String $user_home_dir            = undef,
+  Optional[String] $target         = undef,
+  Optional[String] $user_home_dir  = undef,
   Boolean $manage_user_ssh_dir     = true,
   Hash $options                    = {}
 )

@@ -1,7 +1,7 @@
 define ssh::server::config::setting (
-  $key,
-  $value,
-  $order = '10'
+  String $key,
+  String $value,
+  String $order = '10'
 ) {
   include ::ssh::params
 
