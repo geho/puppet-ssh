@@ -1,7 +1,7 @@
 class ssh::client(
   String $ensure                = 'present',
   Boolean $storeconfigs_enabled = true,
-  Array $options                = {},
+  Hash $options                 = {},
   Boolean $use_augeas           = false,
   Array $options_absent         = [],
 ) inherits ssh::params {
