@@ -8,7 +8,8 @@
 
 Manage SSH client and server via Puppet.
 Source: https://github.com/saz/puppet-ssh
-Forked by gheo to: https://github.com/geho/puppet-ssh
+
+Forked by geho to: https://github.com/geho/puppet-ssh
 
 ## Requirements
 * Exported resources for host keys management
