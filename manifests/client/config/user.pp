@@ -3,17 +3,13 @@
 # Contributor: Remi Ferrand <remi{dot}ferrand_at_cc(dot)in2p3.fr> (2015)
 #
 define ssh::client::config::user(
-  $ensure               = present,
-  $target               = undef,
-  $user_home_dir        = undef,
-  $manage_user_ssh_dir  = true,
-  $options              = {}
+  Enum['present','absent'] $ensure = 'present',
+  String $target                   = undef,
+  String $user_home_dir            = undef,
+  Boolean $manage_user_ssh_dir     = true,
+  Hash $options                    = {}
 )
 {
-  validate_re($ensure, '^(present|absent)$')
-  validate_hash($options)
-  validate_bool($manage_user_ssh_dir)
-
   include ::ssh::params
 
   $_files_ensure = $ensure ? { 'present' => 'file', 'absent' => 'absent' }

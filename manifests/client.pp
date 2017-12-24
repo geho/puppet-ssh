@@ -1,13 +1,13 @@
 class ssh::client(
-  $ensure               = present,
-  $storeconfigs_enabled = true,
-  $options              = {},
-  $use_augeas           = false,
-  $options_absent       = [],
+  String $ensure                = 'present',
+  Boolean $storeconfigs_enabled = true,
+  Array $options                = {},
+  Boolean $use_augeas           = false,
+  Array $options_absent         = [],
 ) inherits ssh::params {
 
   # Merge hashes from multiple layer of hierarchy in hiera
-  $hiera_options = hiera_hash("${module_name}::client::options", undef)
+  $hiera_options = lookup("${module_name}::client::options", {merge => hash, default_value => {}})
 
   $fin_options = $hiera_options ? {
     undef   => $options,

@@ -1,4 +1,4 @@
-define ssh::server::match_block ($options, $type = 'user', $order = 50,) {
+define ssh::server::match_block ($options, String $type = 'user', Integer $order = 50,) {
   if $::ssh::server::use_augeas {
     fail('ssh::server::match_block() define not supported with use_augeas = true')
   } else {

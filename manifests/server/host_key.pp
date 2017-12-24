@@ -37,13 +37,13 @@
 #   Note certificate_source and certificate_content are mutually exclusive.
 #
 define ssh::server::host_key (
-  $ensure = 'present',
-  $public_key_source = '',
-  $public_key_content = '',
-  $private_key_source = '',
-  $private_key_content = '',
-  $certificate_source = '',
-  $certificate_content = '',
+  String $ensure = 'present',
+  String $public_key_source = '',
+  String $public_key_content = '',
+  String $private_key_source = '',
+  String $private_key_content = '',
+  String $certificate_source = '',
+  String $certificate_content = '',
 ) {
   if $public_key_source == '' and $public_key_content == '' {
     fail('You must provide either public_key_source or public_key_content parameter')
